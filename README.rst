@@ -188,7 +188,7 @@ Debugg:
 -----
 
 python3
-    import qspectrumanalyzer.__main__ 
+    import qspectrumanalyzer.__main__   
     qspectrumanalyzer.__main__.main() 
 
 
