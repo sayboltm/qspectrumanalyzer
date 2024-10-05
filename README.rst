@@ -186,13 +186,15 @@ Todo:
 
 Debugg:
 -----
+python3    
 
-python3
-    import qspectrumanalyzer.__main__   
-    qspectrumanalyzer.__main__.main() 
+import qspectrumanalyzer.__main__    
+
+qspectrumanalyzer.__main__.main()    
 
 
 Changelog:
 -----
 - rtl_power compatibility
 - status bar back working
+- fix waterfall 
