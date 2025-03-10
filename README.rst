@@ -127,13 +127,13 @@ Ubuntu:
     sudo apt-get update
 
     # Install basic dependencies
-    sudo apt-get install python3-pip python3-pyqt5 python3-numpy python3-scipy soapysdr python3-soapysdr
+    sudo apt-get install python3-pip python3-pyqt5 python3-numpy python3-scipy soapysdr-tools python3-soapysdr
 
     # Install SoapySDR drivers for your hardware (e.g. RTL-SDR, Airspy, HackRF, LimeSDR, etc.)
     sudo apt-get install soapysdr-module-rtlsdr soapysdr-module-airspy soapysdr-module-hackrf soapysdr-module-lms7
 
     # Install QSpectrumAnalyzer locally for your current user
-    pip3 install --user qspectrumanalyzer
+    pip install --user qspectrumanalyzer
 
 ``qspectrumanalyzer`` and ``soapy_power`` executables will be then placed in
 ``~/.local/bin`` directory, you can add it to your PATH in ``~/.bashrc``.
@@ -143,7 +143,7 @@ If you want to install QSpectrumAnalyzer directly from Git master branch, you ca
 
     git clone https://github.com/xmikos/qspectrumanalyzer.git
     cd qspectrumanalyzer
-    pip3 install --user .
+    pip install --user .
 
 Windows:
 ********
@@ -174,6 +174,20 @@ You can also install QSpectrumAnalyzer manually from `PyPI <https://pypi.python.
 You should then be able to run it with ``qspectrumanalyzer`` (or ``python -m qspectrumanalyzer``
 if it doesn't work for you).
 
+OSX:
+********
+*Tested with MacOS High Sierra 10.13.4 (2018-05-29)*
+
+0. Install XCode and its command line tools. Then install  `Homebrew <https://brew.sh/>`_.
+1. Install `SoapySDR <https://github.com/pothosware/homebrew-pothos/wiki>`_ by following the steps for Homebrew.
+2. Python 3.6 and pip3 will be installed as a dependency from the installation above, now run::
+
+        pip3 install PyQt5
+        pip3 install QSpectrumAnalyzer
+        
+You should then be able to run it with ``qspectrumanalyzer`` (or ``python3 -m qspectrumanalyzer`` if it doesn't work for you).
+
+
 Todo:
 -----
 
@@ -182,3 +196,19 @@ Todo:
 - display average noise level
 - frequency markers / bookmarks with notes (even importing and exporting .csv file with
   predefined channels, etc.)
+
+
+Debugg:
+-----
+python3    
+
+import qspectrumanalyzer.__main__    
+
+qspectrumanalyzer.__main__.main()    
+
+
+Changelog:
+-----
+- rtl_power compatibility
+- status bar back working
+- fix waterfall 
